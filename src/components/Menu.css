@@ -1,0 +1,100 @@
+/* ===== Menu Section ===== */
+
+.menu {
+  background-color: var(--color-cream);
+}
+
+/* Category tab buttons row */
+.menu__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.menu__tab {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  transition: all var(--transition);
+}
+
+.menu__tab:hover {
+  color: var(--color-deep-red);
+  border-color: var(--color-deep-red);
+}
+
+/* Active tab styling */
+.menu__tab--active {
+  background-color: var(--color-deep-red);
+  color: var(--color-cream);
+  border-color: var(--color-deep-red);
+}
+
+.menu__tab--active:hover {
+  color: var(--color-cream);
+}
+
+/* Grid layout for cards */
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* LOADING ANIMATION 4: Bouncing dots container */
+.menu__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 60px 0;
+}
+
+.menu__dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* Stagger the dots so they bounce one after another */
+.menu__dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.menu__dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu__grid {
+    grid-template-columns: 1fr;
+  }
+  .menu__tab {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+}

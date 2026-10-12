@@ -1,0 +1,75 @@
+/* ===== About Section ===== */
+
+.about {
+  background-color: var(--color-cream);
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Story text */
+.about__story p {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* Stats row */
+.about__stats {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.about__stat {
+  text-align: center;
+  padding: 24px 20px;
+  background: var(--color-warm-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  flex: 1;
+  transition: transform var(--transition);
+}
+
+.about__stat:hover {
+  transform: translateY(-3px);
+}
+
+.about__stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.about__stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__stats {
+    flex-direction: column;
+  }
+}

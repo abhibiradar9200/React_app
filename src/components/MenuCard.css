@@ -1,0 +1,68 @@
+/* ===== Menu Card ===== */
+
+.menu-card {
+  background: var(--color-warm-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Hover: lift card up slightly */
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Image wrapper clips the image */
+.menu-card__image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #e8e0d6;
+}
+
+/* LOADING ANIMATION 7: image starts blurred, sharpens when loaded */
+.menu-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(10px);
+  transform: scale(1.05);
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.menu-card__image--loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* Card body with text */
+.menu-card__body {
+  padding: 16px;
+}
+
+.menu-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.menu-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-dark-brown);
+}
+
+.menu-card__price {
+  font-weight: 600;
+  color: var(--color-deep-red);
+  font-size: 1.05rem;
+}
+
+.menu-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}

@@ -1,0 +1,149 @@
+/* ===== Reservation Section ===== */
+
+.reservation {
+  background-color: #f5ede3;
+}
+
+/* Form container — centered, max width */
+.reservation__form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each form field (label + input + error) */
+.reservation__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reservation__field label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-dark-brown);
+}
+
+.reservation__field input {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #d9cfc3;
+  border-radius: 8px;
+  background: var(--color-warm-white);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.reservation__field input:focus {
+  border-color: var(--color-gold);
+}
+
+/* Validation error text */
+.reservation__error {
+  font-size: 0.82rem;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* Submit button */
+.reservation__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-cream);
+  background-color: var(--color-deep-red);
+  border-radius: 8px;
+  transition: background-color var(--transition), transform var(--transition);
+  margin-top: 8px;
+}
+
+.reservation__submit:hover:not(:disabled) {
+  background-color: var(--color-gold);
+  color: var(--color-dark-brown);
+  transform: translateY(-2px);
+}
+
+/* Disabled state while submitting */
+.reservation__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* LOADING ANIMATION 5: Small spinner inside the button */
+.reservation__btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 248, 240, 0.3);
+  border-top-color: var(--color-cream);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Success message card */
+.reservation__success {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  background: var(--color-warm-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  animation: fadeIn 0.5s ease;
+}
+
+.reservation__success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.reservation__success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-dark-brown);
+  margin-bottom: 8px;
+}
+
+.reservation__success p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.reservation__reset-btn {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  background-color: var(--color-deep-red);
+  border-radius: 8px;
+  transition: background-color var(--transition);
+}
+
+.reservation__reset-btn:hover {
+  background-color: var(--color-gold);
+  color: var(--color-dark-brown);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

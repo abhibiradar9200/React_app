@@ -1,0 +1,95 @@
+/* ===== Hero Section ===== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Unsplash food background image */
+  background: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80") center / cover no-repeat;
+  overflow: hidden;
+}
+
+/* Dark overlay so text is readable */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 35, 20, 0.75),
+    rgba(59, 35, 20, 0.85)
+  );
+}
+
+/* Hero text content */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+  /* Start hidden — will animate in */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* LOADING ANIMATION 6: fade and slide up when preloader is done */
+.hero__content--visible {
+  animation: fadeSlideUp 0.9s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  color: var(--color-cream);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.hero__text {
+  font-size: 1.15rem;
+  color: rgba(255, 248, 240, 0.85);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero__button {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: var(--color-deep-red);
+  color: var(--color-cream);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.hero__button:hover {
+  background-color: var(--color-gold);
+  color: var(--color-dark-brown);
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.4rem;
+  }
+  .hero__text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+}
